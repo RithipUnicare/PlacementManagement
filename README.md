@@ -1,97 +1,118 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Campus Placement Management System
 
-# Getting Started
+A comprehensive React Native mobile application for managing campus placements with support for three user roles: Students, Recruiters, and Admins.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+### Student Features
+- Browse approved job postings
+- Apply for jobs with eligibility check
+- Track application status
+- Upload and manage resume
+- View and accept job offers
+- Complete profile management
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### Recruiter Features
+- Create and manage company profile
+- Post job openings
+- Review student applications
+- Shortlist candidates
+- Schedule interviews
+- Upload offer letters
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Admin Features
+- Dashboard with placement statistics
+- Manage users (view, edit roles, delete)
+- Approve job postings
+- Monitor placement activities
 
-```sh
-# Using npm
-npm start
+## Tech Stack
 
-# OR using Yarn
-yarn start
+- **Framework:** React Native 0.83
+- **Language:** TypeScript
+- **Navigation:** React Navigation (Stack + Bottom Tabs)
+- **UI Library:** React Native Paper (Material Design)
+- **Icons:** React Native Vector Icons
+- **Forms:** React Native Element Dropdown, DateTimePicker
+- **API:** Axios with interceptors
+- **Storage:** AsyncStorage
+- **State Management:** Context API
+
+## Project Structure
+
+```
+src/
+├── navigation/         # Navigation configuration
+├── screens/           # All app screens
+├── components/        # Reusable components
+├── services/          # API services
+├── context/           # React context (Auth)
+├── utils/             # Utilities and helpers
+└── theme/             # Theme configuration
 ```
 
-## Step 2: Build and run your app
+## Installation
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+# Install dependencies
+npm install
 
-### Android
+# iOS only
+cd ios && pod install && cd ..
 
-```sh
-# Using npm
+# Run on Android
 npm run android
 
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# Run on iOS
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## API Configuration
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Base URL: `http://app.undefineddevelopers.online/placement/api`
 
-## Step 3: Modify your app
+Update in `src/utils/constants.ts` if needed.
 
-Now that you have successfully run the app, let's make changes!
+## Development Status
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### ✅ Completed
+- Complete navigation architecture
+- Authentication flow (Login, Signup)
+- All API service layer
+- Theme and styling system
+- Reusable components
+- AuthContext for state management
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+### 🚧 To Be Completed
+- Full implementation of Student screens
+- Full implementation of Recruiter screens
+- Full implementation of Admin screens
+- File upload UI for resume and offers
+- Search and filter features
+- Comprehensive testing
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## Key Files
 
-## Congratulations! :tada:
+- `App.tsx` - Main app entry point
+- `src/navigation/AppNavigator.tsx` - Root navigation with role-based routing
+- `src/context/AuthContext.tsx` - Authentication state management
+- `src/services/api.ts` - Axios configuration with interceptors
+- `src/theme/theme.ts` - App theming
 
-You've successfully run and modified your React Native App. :partying_face:
+## Available Roles
 
-### Now what?
+- `STUDENT` - Access to job browsing and application features
+- `RECRUITER` - Access to job posting and candidate management
+- `ADMIN` - Access to user management and approval features
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## Contributing
 
-# Troubleshooting
+1. Implement remaining screen functionality
+2. Add comprehensive form validation
+3. Implement file upload features
+4. Add unit and integration tests
+5. Optimize performance
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## License
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Private project - All rights reserved
